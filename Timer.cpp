@@ -40,3 +40,8 @@ Uint32 Timer::Read()
 }
 
 
+//Seed random 
+void Timer::SeedRandom()
+{
+	SDL_GetTicks();
+}

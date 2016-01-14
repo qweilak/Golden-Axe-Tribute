@@ -1,0 +1,7 @@
+﻿  ModuleScenelvl1.cpp
+ModuleScenelvl1.cpp(71): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+ModuleScenelvl1.cpp(98): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+ModuleScenelvl1.cpp(241): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Generating code
+  Finished generating code
+  SDL Game.vcxproj -> C:\Users\SuperUser\Documents\GitHub\Golden-Axe-Tribute\Release\Golden Axe - Tribute.exe

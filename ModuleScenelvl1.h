@@ -5,6 +5,7 @@
 #include "Animation.h"
 #include "Globals.h"
 #include "Point.h"
+#include "Timer.h"
 
 struct Explosion
 {
@@ -50,6 +51,8 @@ public:
 	Collider* collider = nullptr;
 	int screenXZero, worldXmax;
 private:
+	uint fx;
+	bool canContinue;
 	bool music_end = true;
 	std::vector<Potion*> potion;
 	SDL_Rect potionRect;
@@ -59,6 +62,8 @@ private:
 	SDL_Rect hud_lifebars;
 	SDL_Rect hud_face;
 	SDL_Rect hud_magic;
+	Animation hud_continue;
+	Timer time;
 };
 
 #endif //__MODULESCENELVL1_H__

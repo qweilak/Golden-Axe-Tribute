@@ -40,6 +40,8 @@ bool ModuleScenelvl1::Start()
 	App->player->Enable();
 	App->enemies->Enable();
 	
+	fx = App->audio->LoadFx("_fx_20.wav");
+
 	//SetUP world max
 	worldXmax = 476;
 
@@ -52,7 +54,7 @@ bool ModuleScenelvl1::Start()
 	AddPotion(992, 154);
 
 	// Representations for magic power
-	collider = App->collision->AddCollider({ 476 - (SCREEN_WIDTH  / 2), 146, SCREEN_WIDTH / 2, 96 }, COLLIDER_CONTINUE, this);
+	collider = App->collision->AddCollider({ 476 - (SCREEN_WIDTH  / 2), YMIN, SCREEN_WIDTH / 2, HEIGHT_OF_PATH }, COLLIDER_CONTINUE, this);
 
 	// Explosions on SCREEN, not WORLD -> so it's HUD but is in 'player' png
 	explosions[0].point = { 32 , 64};
@@ -69,11 +71,22 @@ bool ModuleScenelvl1::Start()
 		explosions[i].animation.speed = (float) (rand() % 2 + 1) * 0.125; // speed for each explosion
 	}
 
+	//time and continue
+	time.Stop();
+	time.Start();
+	canContinue = false;
+
+	//Seed random 
+	time.SeedRandom();
+
 	// HUD	
 	hud_lifebars = { 0, 0, 88, 16};
 	hud_face = { 97, 0 , 16, 16};
 	hud_magic = { 120, 25, 49, 24};
-
+	hud_continue.frames.push_back({ 0, 80, 64, 36 });
+	hud_continue.frames.push_back({ 0, 116, 64, 36 });
+	hud_continue.loop = true;
+	hud_continue.speed = 0.125;
 	return true;
 }
 
@@ -222,13 +235,19 @@ update_status ModuleScenelvl1::Update()
 	App->renderer->Blit(hud, 135, 0, &hud_magic, 0);
 	App->renderer->Blit(hud, 88, 200, &hud_lifebars, 0);
 	App->renderer->Blit(hud, 186, 200, &hud_face, 0);
+
+	//Animation continue
+	if (canContinue && time.Read() < 1500)
+		App->renderer->Blit(hud, screenXZero + SCREEN_WIDTH - 80, 32, &hud_continue.GetCurrentFrame());
+	else
+		canContinue = false;
+
 	return UPDATE_CONTINUE;
 }
 
 
 void ModuleScenelvl1::OnCollision(Collider* c, Collider* other)
 {
-
 	//continue next zone
 	if (c->type == COLLIDER_CONTINUE)
 	{
@@ -244,8 +263,16 @@ void ModuleScenelvl1::OnCollision(Collider* c, Collider* other)
 		//without enemies enable next zone of the stage
 		if (numOfEnemies == 0)
 		{
-			if (worldXmax <= 1506) 
-				worldXmax += 212; 
+			time.Stop();
+			time.Start();
+
+			if (worldXmax < 1506)
+				canContinue = true;
+			if (worldXmax <= 1506)
+			{
+				App->audio->PlayFx(fx,2);
+				worldXmax += 212;
+			}
 			collider->SetPos(collider->rect.x + 212, collider->rect.y);
 		}
 	}

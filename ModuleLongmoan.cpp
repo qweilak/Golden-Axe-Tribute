@@ -19,6 +19,9 @@ ModuleLongmoan::ModuleLongmoan(bool start_enabled) : Module(start_enabled)
 	Animation dead;
 
 	time.Start();
+	//Seed random 
+	time.SeedRandom();
+
 	randomTime = rand() % 100;
 	collider = App->collision->AddCollider({ position.x - COLLIDER_ENEMY_WIDTH / 2, position.y, COLLIDER_ENEMY_WIDTH, COLLIDER_ENEMY_HEIGHT }, COLLIDER_ENEMY, this);
 	//Animations

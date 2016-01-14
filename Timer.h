@@ -14,6 +14,7 @@ public:
 	void Stop();
 
 	uint32 Read();
+	void SeedRandom();
 
 private:
 
