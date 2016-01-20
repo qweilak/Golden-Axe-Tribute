@@ -1,7 +1,31 @@
-﻿  ModuleScenelvl1.cpp
-ModuleScenelvl1.cpp(71): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-ModuleScenelvl1.cpp(98): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-ModuleScenelvl1.cpp(241): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Generating code
-  Finished generating code
-  SDL Game.vcxproj -> C:\Users\SuperUser\Documents\GitHub\Golden-Axe-Tribute\Release\Golden Axe - Tribute.exe
+﻿Build started 20/01/2016 16:11:51.
+     1>Project "C:\Users\SuperUser\Documents\GitHub\Golden-Axe-Tribute\SDL Game.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ModuleCollision.cpp
+         ModuleCollision.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\SuperUser\Documents\GitHub\Golden-Axe-Tribute\Release\Golden Axe - Tribute.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\SuperUser\Documents\GitHub\Golden-Axe-Tribute\Release\Golden Axe - Tribute.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\SuperUser\Documents\GitHub\Golden-Axe-Tribute\Release\Golden Axe - Tribute.lib" /MACHINE:X86 /SAFESEH Release\Application.obj
+         Release\Log.obj
+         Release\Main.obj
+         Release\ModuleAudio.obj
+         Release\ModuleCollision.obj
+         Release\ModuleEnemies.obj
+         Release\ModuleFadeToBlack.obj
+         Release\ModuleInput.obj
+         Release\ModuleLongmoan.obj
+         Release\ModulePlayer.obj
+         Release\ModuleRender.obj
+         Release\ModuleSceneIntro.obj
+         Release\ModuleScenelvl1.obj
+         Release\ModuleTextures.obj
+         Release\ModuleWindow.obj
+         Release\ModuleSword.obj
+         Release\Timer.obj
+         Generating code
+         Finished generating code
+         SDL Game.vcxproj -> C:\Users\SuperUser\Documents\GitHub\Golden-Axe-Tribute\Release\Golden Axe - Tribute.exe
+     1>Done Building Project "C:\Users\SuperUser\Documents\GitHub\Golden-Axe-Tribute\SDL Game.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.26

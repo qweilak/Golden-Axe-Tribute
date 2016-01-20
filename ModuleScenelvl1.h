@@ -53,7 +53,7 @@ public:
 private:
 	uint fx;
 	bool canContinue;
-	bool music_end = true;
+	bool music_end;
 	std::vector<Potion*> potion;
 	SDL_Rect potionRect;
 	Explosion explosions[7];

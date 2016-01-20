@@ -189,6 +189,7 @@ bool ModuleCollision::CleanUp()
 		RELEASE(*it);
 
 	colliders.clear();
+	collisions.clear();
 	return true;
 }
 

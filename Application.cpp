@@ -11,7 +11,7 @@
 #include "ModulePlayer.h"
 #include "ModuleEnemies.h"
 #include "ModuleSword.h"
-#include <vld.h>
+//#include <vld.h>
 using namespace std;
 
 Application::Application()

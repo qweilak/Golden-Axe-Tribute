@@ -87,6 +87,9 @@ bool ModuleScenelvl1::Start()
 	hud_continue.frames.push_back({ 0, 116, 64, 36 });
 	hud_continue.loop = true;
 	hud_continue.speed = 0.125;
+
+	//music end
+	music_end = true;
 	return true;
 }
 
